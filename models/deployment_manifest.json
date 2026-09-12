@@ -1,0 +1,18 @@
+{
+    "deployment_name": "StreamSentinel_ML_V2",
+    "model_file": "xgboost_fraud_detector.json",
+    "feature_file": "feature_columns.json",
+    "model_info_file": "model_info.json",
+    "config_file": "deployment_config.json",
+    "model_type": "XGBoost",
+    "model_version": "2.0",
+    "feature_count": 6,
+    "features": [
+        "amount",
+        "amount_vs_avg_ratio",
+        "txn_count_last_5min",
+        "time_since_last_txn_sec",
+        "distance_from_last_location_km",
+        "merchant_category_is_new_for_user"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "ml_weight": 0.5,
+    "rule_weight": 0.5,
+    "allow_max_risk": 0.25,
+    "otp_max_risk": 0.5,
+    "review_max_risk": 0.75
+}

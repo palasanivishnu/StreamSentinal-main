@@ -1,0 +1,15 @@
+{
+    "model": "XGBoost",
+    "model_version": "2.0",
+    "classification_threshold": 0.5,
+    "feature_count": 6,
+    "features": [
+        "amount",
+        "amount_vs_avg_ratio",
+        "txn_count_last_5min",
+        "time_since_last_txn_sec",
+        "distance_from_last_location_km",
+        "merchant_category_is_new_for_user"
+    ],
+    "prediction_type": "fraud_probability"
+}

@@ -1,0 +1,12 @@
+{
+    "amount_vs_avg_ratio_threshold": 3.0,
+    "velocity_5min_threshold": 5,
+    "impossible_travel_distance_km": 500.0,
+    "impossible_travel_time_sec": 3600.0,
+    "rule_weights": {
+        "HIGH_AMOUNT": 0.25,
+        "HIGH_VELOCITY": 0.25,
+        "IMPOSSIBLE_TRAVEL": 0.25,
+        "NEW_MERCHANT_CATEGORY": 0.25
+    }
+}
