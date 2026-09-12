@@ -72,3 +72,10 @@ load_testing/results/
 
 # Local runtime database
 data/local_db.json
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+

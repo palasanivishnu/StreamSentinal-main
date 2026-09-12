@@ -1,0 +1,27 @@
+services:
+  # StreamSentinel FastAPI REST Backend
+  - type: web
+    name: streamsentinel-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: APPLICATION_ENV
+        value: production
+
+  # StreamSentinel React Operations Dashboard
+  - type: web
+    name: streamsentinel-frontend
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    plan: free
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

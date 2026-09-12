@@ -2,6 +2,10 @@
 
 StreamSentinel is an end-to-end, production-grade real-time financial fraud and anomaly detection platform. It unifies high-speed streaming data processing (Kafka, Redis), behavioral machine learning (XGBoost), deterministic rule-based fraud detection, explainable AI (SHAP), MongoDB persistence, automated fraud alerting & OTP verification, a full FastAPI REST platform API, Prometheus metrics & Grafana monitoring dashboards, Docker multi-service containerization, AWS EC2 deployment readiness, Locust load testing, and an interactive React operations dashboard.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/palasanivishnu/StreamSentinal-main)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpalasanivishnu%2FStreamSentinal-main&root-directory=frontend)
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?logo=github)](https://palasanivishnu.github.io/StreamSentinal-main/)
+
 ---
 
 ## 🏗️ End-to-End System Architecture
