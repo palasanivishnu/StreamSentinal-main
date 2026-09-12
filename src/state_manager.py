@@ -5,12 +5,15 @@ Maintains live per-user profiles and computes Feature Vectors.
 
 import math
 import os
+import logging
 from datetime import datetime
 from typing import Optional, Tuple, Union
 import dateutil.parser
 import redis
 
 from src.schemas import FeatureVector, TransactionEvent
+
+logger = logging.getLogger("streamsentinel.state_manager")
 
 
 def haversine_distance_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:

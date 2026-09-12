@@ -17,9 +17,14 @@ DB_NAME = MONGODB_DATABASE
 
 import json
 import uuid
+import os
+import tempfile
 from pathlib import Path
 
-DB_FILE = Path("data/local_db.json")
+if os.getenv("VERCEL"):
+    DB_FILE = Path(tempfile.gettempdir()) / "streamsentinel_local_db.json"
+else:
+    DB_FILE = Path("data/local_db.json")
 
 
 class FileCollection:

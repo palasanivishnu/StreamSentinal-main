@@ -77,8 +77,8 @@ def _run_background_consumer():
 
 def start_background_kafka_consumer():
     global _consumer_thread
-    if os.getenv("TESTING") == "1" or os.getenv("DISABLE_KAFKA_CONSUMER") == "1":
-        logger.info("Kafka background consumer disabled for testing.")
+    if os.getenv("TESTING") == "1" or os.getenv("DISABLE_KAFKA_CONSUMER") == "1" or os.getenv("VERCEL") == "1":
+        logger.info("Kafka background consumer disabled for testing/serverless.")
         return
     with _consumer_lock:
         if _consumer_thread is not None and _consumer_thread.is_alive():
