@@ -77,8 +77,14 @@ export interface SearchResult {
 export const getApiBaseUrl = (): string => {
   const envUrl = import.meta.env.VITE_API_URL;
   const localUrl = localStorage.getItem('streamsentinel_api_url');
-  const baseUrl = envUrl || localUrl || 'http://localhost:8000';
-  return baseUrl.replace(/\/+$/, '');
+  if (envUrl) return envUrl.replace(/\/+$/, '');
+  if (localUrl) return localUrl.replace(/\/+$/, '');
+  if (typeof window !== 'undefined' && window.location) {
+    if (!window.location.hostname.endsWith('github.io')) {
+      return '';
+    }
+  }
+  return 'http://localhost:8000';
 };
 
 export async function fetchHealth(): Promise<{ status: string; environment: string; timestamp: string }> {

@@ -9,5 +9,17 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true,
+    proxy: {
+      '/health': 'http://127.0.0.1:8000',
+      '/transactions': 'http://127.0.0.1:8000',
+      '/analytics': 'http://127.0.0.1:8000',
+      '/alerts': 'http://127.0.0.1:8000',
+      '/reviews': 'http://127.0.0.1:8000',
+      '/otp': 'http://127.0.0.1:8000',
+      '/simulator': 'http://127.0.0.1:8000',
+      '/search': 'http://127.0.0.1:8000',
+      '/users': 'http://127.0.0.1:8000',
+      '/metrics': 'http://127.0.0.1:8000',
+    },
   },
 })
