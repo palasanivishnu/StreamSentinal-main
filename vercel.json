@@ -1,74 +1,12 @@
 {
-  "version": 2,
-  "builds": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "framework": "vite",
+  "rewrites": [
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    },
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/health(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/transactions(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/analytics(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/alerts(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/reviews(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/otp(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/simulator(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/search(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/users(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/metrics(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/docs(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/openapi.json",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/frontend/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
