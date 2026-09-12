@@ -9,6 +9,7 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true,
+    allowedHosts: true,
     proxy: {
       '/health': 'http://127.0.0.1:8000',
       '/transactions': 'http://127.0.0.1:8000',
