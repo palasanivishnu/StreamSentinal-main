@@ -1,7 +1,9 @@
 # ─── Person A: Data & Streaming ─────────────────────────────────────────────
 pydantic>=2.0.0
 kafka-python>=2.0.2
+confluent-kafka>=2.0.0
 redis>=5.0.0
+fakeredis>=2.0.0
 
 # ─── Person B: Detection Pipeline ───────────────────────────────────────────
 numpy>=1.24.0
