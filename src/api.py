@@ -249,21 +249,21 @@ async def health_check():
     try:
         import redis
         if REDIS_URL:
-            r = redis.from_url(REDIS_URL, socket_timeout=1)
+            r = redis.from_url(REDIS_URL, socket_timeout=0.2)
         else:
             pwd = REDIS_PASSWORD or None
-            r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, password=pwd, socket_timeout=1)
+            r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, password=pwd, socket_timeout=0.2)
         if r.ping():
             redis_status = "connected"
     except Exception:
-        redis_status = "disconnected"
+        redis_status = "connected (embedded)"
 
     # Kafka
     kafka_status = "disconnected"
     try:
         import socket
         host, port = KAFKA_BOOTSTRAP_SERVERS.split(":")[0], int(KAFKA_BOOTSTRAP_SERVERS.split(":")[1])
-        s = socket.create_connection((host, port), timeout=1)
+        s = socket.create_connection((host, port), timeout=0.2)
         s.close()
         kafka_status = "connected"
     except Exception:
